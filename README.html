@@ -1,5 +1,9 @@
 # Projekt nr 2 - wtyczka do QGIS
 
+AUTORZY: 
+Julia Nowak 325799
+Natalia Oknińska 325801
+
 WYMAGANIA SYSTEMOWE:
   - system Windows 10 lub 11
   - program QGIS (w wersji minimum 3.22)
@@ -19,7 +23,7 @@ FUNKCJE WTYCZKI:
      Program pobierze wtedy wartości z tabeli atrybutów w programie QGIS z kolumny, w której znajdują się wysokości tych punktów. Wtyczka odejmować będzie wysokość punktu początkowego od wysokości punktu końcowego, co da wynik o znaku 
      dodatnim bądź ujemnym - zależnie od tego w jakiej kolejności podamy nasze punkty. Na podstawie znaku uzyskanego przewyższenia będzie można zatem stwierdzić, czy na wybranym odcinku nastąpił wzrost czy spadek terenu.
      
-     Aby wtyczka poprawnie obliczyła różnicę wysokości pomiędzy punktami, ich wysokości powinny być wyrażone w systemie wysokości  'EVRF2007', a zaznaczone punkty muszą znajdować się na warstwie o nazwie 'agencje zatrudnienia’.
+     Aby wtyczka poprawnie obliczyła różnicę wysokości pomiędzy punktami, ich wysokości powinny być wyrażone w systemie wysokości  'EVRF2007', a zaznaczone punkty muszą znajdować się na warstwie o nazwie 'agencje_zatrudnienia’.
      
      Podany wynik wyrażony jest w metrach, z dokładnością do trzeciego miejsca po przecinku.
      
@@ -35,7 +39,7 @@ SPOSÓB UŻYCIA WTYCZKI:
   1. Na samym początku należy pobrać wtyczkę i umieścić ją w folderze z wtyczkami a następnie załadować wtyczkę w programie QGIS.
   2. Następnie wczytać mapę zawierającą potrzebne, (wymienione wyżej) artybuty oraz elementy geometrii i uruchomić warstwę. 
   3. Po wczytaniu mapy należy zaznaczyć na mapie odpowiednią liczbę punktów 
-  4. Następnie w okienku wtyczki wybrać odpowiednią warstwę ('agencja zatrudnienia')
+  4. Następnie w okienku wtyczki wybrać odpowiednią warstwę ('agencja_zatrudnienia')
   5. Po kliknięciu 'Kliknij aby obliczyć przewyższenie' obok wybranej funkcji obok przycisku powinien pojawić się wynik. Jeśli użytkownik nie wybierze wymaganej
      do wykonania wybranej operacji liczby punktów program wyświetli komunikat o powstałym błędzie.
      
