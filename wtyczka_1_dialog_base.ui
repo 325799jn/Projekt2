@@ -81,14 +81,14 @@
   <widget class="QPushButton" name="przycisk_pole_pow">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>390</y>
-     <width>93</width>
-     <height>28</height>
+     <x>380</x>
+     <y>380</y>
+     <width>251</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Kliknij, aby policzyć pole powierzchni</string>
    </property>
   </widget>
   <widget class="QLabel" name="wynik_przewyzszenie">
