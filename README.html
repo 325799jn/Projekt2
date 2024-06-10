@@ -1,42 +1,48 @@
-<html>
-<body>
-<h3>Plugin Builder Results</h3>
+# Projekt nr 2 - wtyczka do QGIS
 
-Congratulations! You just built a plugin for QGIS!<br/><br />
+WYMAGANIA SYSTEMOWE:
+  - system Windows 10 lub 11
+  - program QGIS (w wersji minimum 3.22)
+  - python 3.9
+  - biblioteka qgis.PyQt
+  - biblioteka qgis.core
+  - biblioteka qgis.utils
+  - biblioteka numpy
+  - biblioteka os
+ 
 
-<div id='help' style='font-size:.9em;'>
-Your plugin <b>plugin_3</b> was created in:<br>
-&nbsp;&nbsp;<b>C:\Users\natal\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins\wtyczka_1</b>
-<p>
-Your QGIS plugin directory is located at:<br>
-&nbsp;&nbsp;<b>C:/Users/natal/AppData/Roaming/QGIS/QGIS3/profiles/default/python/plugins</b>
-<p>
-<h3>What's Next</h3>
-<ol>
-    <li>If resources.py is not present in your plugin directory, compile the resources file using pyrcc5 (simply use <b>pb_tool</b> or <b>make</b> if you have automake)
-    <li>Optionally, test the generated sources using <b>make test</b> (or run tests from your IDE)
-    <li>Copy the entire directory containing your new plugin to the QGIS plugin directory (see Notes below)
-    <li>Test the plugin by enabling it in the QGIS plugin manager
-    <li>Customize it by editing the implementation file <b>wtyczka_1.py</b>
-    <li>Create your own custom icon, replacing the default <b>icon.png</b>
-    <li>Modify your user interface by opening <b>wtyczka_1_dialog_base.ui</b> in Qt Designer
-</ol>
-Notes:
-<ul>
-    <li>You can use <b>pb_tool</b> to compile, deploy, and manage your plugin. Tweak the <i>pb_tool.cfg</i> file included with your plugin as you add files. Install <b>pb_tool</b> using 
-        <i>pip</i> or <i>easy_install</i>. See <b>http://loc8.cc/pb_tool</b> for more information.
-    <li>You can also use the <b>Makefile</b> to compile and deploy when you
-        make changes. This requires GNU make (gmake). The Makefile is ready to use, however you 
-        will have to edit it to add addional Python source files, dialogs, and translations.
-</ul>
-</div>
-<div style='font-size:.9em;'>
-<p>
-For information on writing PyQGIS code, see <b>http://loc8.cc/pyqgis_resources</b> for a list of resources.
-</p>
-</div>
-<p>
-&copy;2011-2019 GeoApt LLC - geoapt.com 
-</p>
-</body>
-</html>
+FUNKCJE WTYCZKI:
+
+  1. Liczenie różnic wysokości pomiędzy dwoma punktami
+  
+     Aby policzyć różnicę wysokości między punktami należy z grupy punktów znajdujących się na tej samej warstwie wybrać dokładnie dwa.
+     Program pobierze wtedy wartości z tabeli atrybutów w programie QGIS z kolumny, w której znajdują się wysokości tych punktów. Wtyczka odejmować będzie wysokość punktu początkowego od wysokości punktu końcowego, co da wynik o znaku 
+     dodatnim bądź ujemnym - zależnie od tego w jakiej kolejności podamy nasze punkty. Na podstawie znaku uzyskanego przewyższenia będzie można zatem stwierdzić, czy na wybranym odcinku nastąpił wzrost czy spadek terenu.
+     
+     Aby wtyczka poprawnie obliczyła różnicę wysokości pomiędzy punktami, ich wysokości powinny być wyrażone w systemie wysokości  'EVRF2007', a zaznaczone punkty muszą znajdować się na warstwie o nazwie 'Osnowa wysokościowa’.
+     
+     Podany wynik wyrażony jest w metrach, z centymetrową dokładnością.
+     
+     
+  2. Liczenie pola powierzchni pomiędzy zaznaczonymi punktami:
+  
+     Do obliczenia pola powierzchni między punktami należy z jednej warstwy wybrać przynajmniej trzy punkty. Następnie na podstawie współrzędnych tych punktów, program policzy pole powierzchni zawarte między nimi. 
+     
+     Podany wynik wyrażany jest w hektarach, z dokładnością do trzeciego miejsca po przecinku.
+     
+     
+SPOSÓB UŻYCIA WTYCZKI:
+  1. Na samym początku należy pobrać wtyczkę i umieścić ją w folderze z wtyczkami a następnie załadować wtyczkę w programie QGIS.
+  2. Następnie wczytać trzeba mapę zawierającą potrzebne, wymienione wyżej artybuty oraz elementy geometrii i uruchomić warstwę. 
+  3. Po wczytaniu mapy należy zaznaczyć na mapie odpowiednią liczbę punktów 
+  5. Następnie w okienku wtyczki wybrać trzeba odpowiednią warstwę ('Osnowa wysokościowa')
+  6. Po kliknięciu 'Policz' obok wybranej funkcji obok przycisku powinien pojawić się wynik. Jeśli użytkownik nie wybierze wymaganej
+     do wykonania wybranej operacji liczby punktów program wyświetli komunikat o powstałym błędzie.
+     
+     
+     
+
+
+
+
+
