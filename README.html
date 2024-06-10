@@ -19,9 +19,9 @@ FUNKCJE WTYCZKI:
      Program pobierze wtedy wartości z tabeli atrybutów w programie QGIS z kolumny, w której znajdują się wysokości tych punktów. Wtyczka odejmować będzie wysokość punktu początkowego od wysokości punktu końcowego, co da wynik o znaku 
      dodatnim bądź ujemnym - zależnie od tego w jakiej kolejności podamy nasze punkty. Na podstawie znaku uzyskanego przewyższenia będzie można zatem stwierdzić, czy na wybranym odcinku nastąpił wzrost czy spadek terenu.
      
-     Aby wtyczka poprawnie obliczyła różnicę wysokości pomiędzy punktami, ich wysokości powinny być wyrażone w systemie wysokości  'EVRF2007', a zaznaczone punkty muszą znajdować się na warstwie o nazwie 'Osnowa wysokościowa’.
+     Aby wtyczka poprawnie obliczyła różnicę wysokości pomiędzy punktami, ich wysokości powinny być wyrażone w systemie wysokości  'EVRF2007', a zaznaczone punkty muszą znajdować się na warstwie o nazwie 'agencje zatrudnienia’.
      
-     Podany wynik wyrażony jest w metrach, z centymetrową dokładnością.
+     Podany wynik wyrażony jest w metrach, z dokładnością do trzeciego miejsca po przecinku.
      
      
   2. Liczenie pola powierzchni pomiędzy zaznaczonymi punktami:
@@ -33,10 +33,10 @@ FUNKCJE WTYCZKI:
      
 SPOSÓB UŻYCIA WTYCZKI:
   1. Na samym początku należy pobrać wtyczkę i umieścić ją w folderze z wtyczkami a następnie załadować wtyczkę w programie QGIS.
-  2. Następnie wczytać trzeba mapę zawierającą potrzebne, wymienione wyżej artybuty oraz elementy geometrii i uruchomić warstwę. 
+  2. Następnie wczytać mapę zawierającą potrzebne, (wymienione wyżej) artybuty oraz elementy geometrii i uruchomić warstwę. 
   3. Po wczytaniu mapy należy zaznaczyć na mapie odpowiednią liczbę punktów 
-  5. Następnie w okienku wtyczki wybrać trzeba odpowiednią warstwę ('Osnowa wysokościowa')
-  6. Po kliknięciu 'Policz' obok wybranej funkcji obok przycisku powinien pojawić się wynik. Jeśli użytkownik nie wybierze wymaganej
+  4. Następnie w okienku wtyczki wybrać odpowiednią warstwę ('agencja zatrudnienia')
+  5. Po kliknięciu 'Kliknij aby obliczyć przewyższenie' obok wybranej funkcji obok przycisku powinien pojawić się wynik. Jeśli użytkownik nie wybierze wymaganej
      do wykonania wybranej operacji liczby punktów program wyświetli komunikat o powstałym błędzie.
      
      
